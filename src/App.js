@@ -141,7 +141,7 @@ const Portfolio = () => {
     },
     {
       title: 'AI Cover Letter Builder',
-      description: 'As a gift to the community, this tool automates the tedious process of writing cover letters. By defining a personal agent with OpenAI\'s latest model, users can input their key points (even in Turkish) and generate a professionally crafted, tailored cover letter, complete with a final PDF export. It’s a smart assistant to help others advance their careers.',
+      description: 'As a gift to the community, this tool automates the tedious process of writing cover letters. Powered by a custom AI agent using OpenAI\'s latest model, users can input their key points (even in Turkish) and generate a professionally crafted, tailored cover letter, complete with a final PDF export. It’s a smart assistant to help others advance their careers.',
       link: process.env.PUBLIC_URL + '/cover_builder_index.html', // The corrected link
       image: 'https://placehold.co/600x400/1a202c/FFFFFF?text=AI+Writer'
     },
