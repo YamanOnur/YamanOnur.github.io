@@ -33,21 +33,29 @@ export default function App() {
   );
 }
 
-// Header Component
+// Header Component with Mobile Menu Logic
 const Header = ({ setActiveSection, activeSection }) => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navItems = ['home', 'about', 'skills', 'portfolio', 'contact'];
+
+  const handleLinkClick = (item) => {
+    setActiveSection(item);
+    setIsMenuOpen(false); // Close menu on link click
+  };
 
   return (
     <header className="bg-gray-800 sticky top-0 z-50 shadow-lg">
       <nav className="container mx-auto px-4 py-2 flex justify-between items-center">
-        <button onClick={() => setActiveSection('home')} className="flex items-center space-x-2">
+        <button onClick={() => handleLinkClick('home')} className="flex items-center space-x-2">
           <img src={logo} alt="Onur Yaman Logo" className="h-12 w-auto" />
         </button>
+
+        {/* Desktop Menu */}
         <ul className="hidden md:flex space-x-6">
           {navItems.map((item) => (
             <li key={item}>
               <button
-                onClick={() => setActiveSection(item)}
+                onClick={() => handleLinkClick(item)}
                 className={`capitalize text-lg hover:text-cyan-400 transition-colors duration-300 ${
                   activeSection === item ? 'text-cyan-400 border-b-2 border-cyan-400' : 'text-gray-300'
                 }`}
@@ -57,13 +65,48 @@ const Header = ({ setActiveSection, activeSection }) => {
             </li>
           ))}
         </ul>
+
+        {/* Mobile Menu Button */}
         <div className="md:hidden">
-          {/* Mobile Menu Icon can be added here */}
+          <button onClick={() => setIsMenuOpen(!isMenuOpen)} aria-label="Toggle menu">
+            {isMenuOpen ? (
+              // Close Icon (X)
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            ) : (
+              // Hamburger Icon
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
+              </svg>
+            )}
+          </button>
         </div>
       </nav>
+
+      {/* Mobile Menu Dropdown */}
+      {isMenuOpen && (
+        <div className="md:hidden bg-gray-800 border-t border-gray-700">
+          <ul className="flex flex-col items-center space-y-4 py-4">
+            {navItems.map((item) => (
+              <li key={item}>
+                <button
+                  onClick={() => handleLinkClick(item)}
+                  className={`capitalize text-lg hover:text-cyan-400 transition-colors duration-300 ${
+                    activeSection === item ? 'text-cyan-400' : 'text-gray-300'
+                  }`}
+                >
+                  {item}
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
     </header>
   );
 };
+
 
 // Home Section
 const Home = ({ setActiveSection }) => (
@@ -142,7 +185,7 @@ const Portfolio = () => {
     {
       title: 'AI Cover Letter Builder',
       description: 'As a gift to the community, this tool automates the tedious process of writing cover letters. Powered by a custom AI agent using OpenAI\'s latest model, users can input their key points (even in Turkish) and generate a professionally crafted, tailored cover letter, complete with a final PDF export. It’s a smart assistant to help others advance their careers.',
-      link: process.env.PUBLIC_URL + '/cover_builder_index.html', // The corrected link
+      link: process.env.PUBLIC_URL + '/cover_builder_index.html',
       image: 'https://placehold.co/600x400/1a202c/FFFFFF?text=AI+Writer'
     },
   ];
