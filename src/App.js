@@ -114,7 +114,7 @@ const Home = ({ setActiveSection }) => (
     <h1 className="text-5xl md:text-6xl font-bold mb-4">Onur Yaman</h1>
     <p className="text-xl text-cyan-400 mb-8">Data Analytics & Software Development</p>
     <p className="text-lg text-gray-300 max-w-2xl mx-auto mb-10">
-      Harnessing mathematical expertise to glean insights from data and build intelligent applications.
+      Delivering high business value from data and software
     </p>
     <button
       onClick={() => setActiveSection('portfolio')}
