@@ -179,7 +179,7 @@ const Portfolio = () => {
     {
       title: 'Vision with AI',
       description: 'An intelligent, real-time video processing application. Leveraging a sophisticated microservices architecture, it analyzes camera feeds to perform face detection, emotion analysis, and gesture recognition. The system was designed for minimal resource consumption and deployed on Azure using Docker and Kubernetes. A high-performance version utilizing WebRTC over GStreamer is also available. Both are available for live demonstration upon request. This work is designed to serve as both a foundation and an initial approach, providing a clear starting point for future applications.',
-      link: 'http://vision.onuryaman.info',
+      link: 'http://vision.onuryaman.me',
       image: 'https://placehold.co/600x400/1a202c/FFFFFF?text=Vision+AI'
     },
 //    {
