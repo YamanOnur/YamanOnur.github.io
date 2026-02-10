@@ -241,8 +241,41 @@ const Contact = () => (
 // Footer Component
 const Footer = () => (
   <footer className="bg-gray-800 py-6 mt-12">
-    <div className="container mx-auto px-4 text-center text-gray-500">
+    <div className="container mx-auto px-4 text-center text-gray-500 space-y-4">
+
+      {/* === SOCIAL LINKS === */}
+      <div className="flex justify-center space-x-6">
+
+        {/* LINKEDIN */}
+        <a
+          href="https://www.linkedin.com/in/onur-yaman-b56b91239"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:text-cyan-400 transition-colors"
+          aria-label="LinkedIn"
+        >
+          <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM0 8h5v16H0V8zm7.5 0h4.8v2.2h.07c.67-1.27 2.3-2.6 4.73-2.6C22 7.6 24 10.1 24 15.3V24h-5v-7.6c0-1.8-.03-4.1-2.5-4.1-2.5 0-2.9 2-2.9 4v7.7h-5V8z"/>
+          </svg>
+        </a>
+
+        {/* GITHUB */}
+        <a
+          href="https://github.com/YamanOnur"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:text-cyan-400 transition-colors"
+          aria-label="GitHub"
+        >
+          <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 .5C5.73.5.5 5.74.5 12.02c0 5.1 3.29 9.43 7.86 10.96.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.54-3.87-1.54-.53-1.35-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.2 1.77 1.2 1.04 1.77 2.72 1.26 3.38.97.1-.75.4-1.26.73-1.55-2.55-.3-5.23-1.28-5.23-5.7 0-1.26.45-2.3 1.19-3.11-.12-.3-.52-1.52.11-3.17 0 0 .97-.31 3.18 1.19a10.9 10.9 0 012.9-.39c.98 0 1.97.13 2.9.39 2.2-1.5 3.17-1.19 3.17-1.19.63 1.65.23 2.87.11 3.17.74.81 1.18 1.85 1.18 3.11 0 4.43-2.69 5.4-5.25 5.69.41.36.78 1.08.78 2.18v3.23c0 .31.21.66.8.55A11.52 11.52 0 0023.5 12C23.5 5.74 18.27.5 12 .5z"/>
+          </svg>
+        </a>
+
+      </div>
+
       <p>&copy; {new Date().getFullYear()} Onur Yaman. All Rights Reserved.</p>
     </div>
   </footer>
 );
+
